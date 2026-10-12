@@ -19,8 +19,8 @@ final class MakeACalendarCraftTests: XCTestCase {
         XCTAssertEqual(sunday.weeks[0][0], CivilDate(year: 2024, month: 9, day: 1)!)
         XCTAssertEqual(sunday.days.count, 30)
         let monday = CalendarMonth(year: 2024, month: 9, weekStart: .monday)!
-        XCTAssertNil(monday.weeks[0][0])
-        XCTAssertEqual(monday.weeks[0][1], CivilDate(year: 2024, month: 9, day: 1)!)
+        XCTAssertEqual(monday.weeks[0][0]?.description, "2024-08-26")
+        XCTAssertEqual(monday.weeks[0][6], CivilDate(year: 2024, month: 9, day: 1)!)
         XCTAssertEqual(monday.weeks.count, 6)
     }
     func testYearContainsTwelveMonths() { XCTAssertEqual(CalendarYear(year: 2024)?.months.count, 12) }
