@@ -2,7 +2,7 @@
 
 **MakeACalendarCraft** is an offline Swift toolkit for deterministic Gregorian calendar grids, ISO weeks, US federal holiday planning, business-day calculations, and printable month exports. It has no network or third-party runtime dependency.
 
-> **Pre-release:** Source is available in this repository. Version 0.1.0 has not been tagged, validated with Xcode/CocoaPods, or published to CocoaPods Trunk. Do not rely on the CocoaPods install command until a release appears on Trunk.
+> **Release 0.1.0:** The GitHub release and matching `0.1.0` tag are published. CocoaPods Trunk listing is still pending; the CocoaPods install command will resolve only after Trunk accepts the pod.
 
 ## Included in the current source
 
@@ -18,7 +18,7 @@ Holiday dates are planning data. Historical statutory exceptions, state holidays
 
 ## Package setup
 
-The package manifest and podspec are included, but a version tag and CocoaPods publication are not yet available. Once a verified 0.1.0 release is tagged, Swift Package Manager can use:
+The `0.1.0` tag is live. Swift Package Manager can use:
 
 ```swift
 .package(url: "https://github.com/makeacalendar/make-a-calendar-swift.git", from: "0.1.0")
@@ -43,7 +43,7 @@ let pdf = try PDFCalendarRenderer.render(year: 2027, month: 1)
 
 ## Build and validation
 
-Run `swift test` with a compatible Swift/Xcode toolchain. Source parsing and podspec syntax have been checked locally, but the XCTest suite, Apple platform builds, simulator example, PDF output, and CocoaPods lint have not yet been run successfully. The current machine's Command Line Tools and installed SDK versions do not match, and full Xcode/CocoaPods tooling is unavailable.
+GitHub Actions on macOS validated `swift package dump-package`, ran all 10 XCTest cases successfully, and passed `pod lib lint` against the iOS target with warnings allowed. The PDF test verifies the generated file markers. A complete Xcode showcase project and simulator run have not been produced.
 
 ## Scope and roadmap
 
